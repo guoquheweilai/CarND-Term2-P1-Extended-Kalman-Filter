@@ -36,7 +36,13 @@ FusionEKF::FusionEKF() {
     * Finish initializing the FusionEKF.
     * Set the process and measurement noises
   */
+  // This TODO is not necessary since we will initialize our matrices in the ProcessMeasurement()
+  H_laser << 1, 0, 0, 0,
+	         0, 1, 0, 0;
 
+  Hj_ << 1, 1, 0, 0,
+		 1, 1, 0, 0,
+		 1, 1, 1, 1;
 
 }
 
