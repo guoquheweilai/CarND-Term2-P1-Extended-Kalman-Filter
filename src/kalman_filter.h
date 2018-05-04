@@ -74,7 +74,7 @@ public:
   * Normalize angles between the range -pi and pi
   * @param phi The resulting angle between rho and the x direction
   */
-  void NormalizeAngle(const &phi);
+  void NormalizeAngle(const float &phi);
 
 };
 
