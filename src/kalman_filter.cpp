@@ -79,13 +79,13 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
 	VectorXd y = z - z_pred;
 
 	// normalize angles
-	NormalizeAngle(y(1));
+	y(1) = NormalizeAngle(y(1));
 
 	// update process
 	UpdateProcess(y);
 }
 
-void KalmanFilter::NormalizeAngle(float &phi) {
+void KalmanFilter::NormalizeAngle(float phi) {
 	while (phi > M_PI) {
 		phi -= 2 * M_PI;
 	}
@@ -93,6 +93,8 @@ void KalmanFilter::NormalizeAngle(float &phi) {
 	while (phi < -M_PI) {
 		phi += 2 * M_PI;
 	}
+
+	return phi;
 }
 
 void KalmanFilter::UpdateProcess(const VectorXd &y) {
