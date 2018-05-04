@@ -37,7 +37,7 @@ FusionEKF::FusionEKF() {
     * Set the process and measurement noises
   */
   
-  H_laser << 1, 0, 0, 0,
+  H_laser_ << 1, 0, 0, 0,
 	         0, 1, 0, 0;
 
   Hj_ << 1, 1, 0, 0,
@@ -45,8 +45,8 @@ FusionEKF::FusionEKF() {
 		 1, 1, 1, 1;
 
   // State covariance matrix P
-  kf_.P_ = MatrixXd(4, 4);
-  kf_.P_ << 1, 0, 0, 0,
+  ekf_.P_ = MatrixXd(4, 4);
+  ekf_.P_ << 1, 0, 0, 0,
 			0, 1, 0, 0,
 			0, 0, 1000, 0,
 			0, 0, 0, 1000;
@@ -154,8 +154,8 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
   ekf_.F_(1, 3) = dt;
 
   // Set the acceleration noise components
-  noise_ax = 5;
-  noise_ay = 5;
+  float noise_ax = 9;
+  float noise_ay = 9;
   
   // Set the process covariance matrix Q
   ekf_.Q_ << dt_4 / 4 * noise_ax, 0, dt_3 / 2 * noise_ax, 0,
