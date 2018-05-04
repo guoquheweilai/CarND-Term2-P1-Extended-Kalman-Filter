@@ -64,6 +64,18 @@ public:
    */
   void UpdateEKF(const Eigen::VectorXd &z);
 
+  /**
+  * General update process for Kalman Filter equations
+  * @param y The prediction error
+  */
+  void UpdateProcess(const Eigen::VectorXd &y);
+
+  /**
+  * Normalize angles between the range -pi and pi
+  * @param phi The resulting angle between rho and the x direction
+  */
+  void NormalizeAngle(const &phi);
+
 };
 
 #endif /* KALMAN_FILTER_H_ */

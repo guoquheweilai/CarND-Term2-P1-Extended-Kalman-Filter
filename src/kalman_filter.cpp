@@ -27,7 +27,7 @@ void KalmanFilter::Predict() {
   */
 
 	x_ = F_ * x_;
-	matrixXd Ft = F_.transpose();
+	MatrixXd Ft = F_.transpose();
 	P_ = F_ * P_ * Ft + Q_;
 
 }
@@ -60,8 +60,8 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
 
 	// pre-compute a set of terms to avoid repeated calculation
 	float rho = sqrt(px * px + py * py);
-	float theta = atan2(py, px);
-	float rho_dot
+	float phi = atan2(py, px);
+	float rho_dot;
 
 	// check division by zero
 	// then assign rho_dot value
@@ -85,13 +85,13 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
 	UpdateProcess(y);
 }
 
-void KalmanFilter::NormalizeAngle(const &theta) {
-	while (theta > M_PI) {
-		theta -= 2 * M_PI;
+void KalmanFilter::NormalizeAngle(const &phi) {
+	while (phi > M_PI) {
+		phi -= 2 * M_PI;
 	}
 
-	while (theta < -M_PI) {
-		theta += 2 * M_PI;
+	while (phi < -M_PI) {
+		phi += 2 * M_PI;
 	}
 }
 
