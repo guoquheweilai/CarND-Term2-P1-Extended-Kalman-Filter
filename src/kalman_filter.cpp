@@ -85,7 +85,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
 	UpdateProcess(y);
 }
 
-void KalmanFilter::NormalizeAngle(const float &phi) {
+void KalmanFilter::NormalizeAngle(float &phi) {
 	while (phi > M_PI) {
 		phi -= 2 * M_PI;
 	}
