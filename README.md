@@ -1,4 +1,25 @@
-# Extended Kalman Filter Project Starter Code
+# CarND-Term2-P1-Extended-Kalman-Filter  
+## Overview  
+## Prerequisites  
+## Setup Instructions (abbreviated)  
+## Project Description  
+## Run the project  
+## Project Rubric  
+### 1. Compiling  
+#### 1.1 Your code should compile.  
+
+### 2. Accuracy  
+#### 2.2 px, py, vx, vy output coordinates must have an RMSE <= [.11, .11, 0.52, 0.52] when using the file: "obj_pose-laser-radar-synthetic-input.txt" which is the same data file the simulator uses for Dataset 1.  
+
+### 3. Follows the Correct Algorithm  
+#### 3.1 Your Sensor Fusion algorithm follows the general processing flow as taught in the preceding lessons.  
+#### 3.2 Your Kalman Filter algorithm handles the first measurements appropriately.  
+#### 3.3 Your Kalman Filter algorithm first predicts then updates.  
+#### 3.4 Your Kalman Filter can handle radar and lidar measurements.  
+
+### 4. Code Efficiency  
+#### 4.1 Your algorithm should avoid unnecessary calculations.
+
 Self-Driving Car Engineer Nanodegree Program
 
 In this project you will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower than the tolerance outlined in the project rubric. 
