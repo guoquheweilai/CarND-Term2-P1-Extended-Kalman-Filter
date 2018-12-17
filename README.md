@@ -60,3 +60,10 @@ Yes.
 
 ## Code Style  
 Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
+
+## Videos
+Video recordings for success cases.  
+Success to plan path on dataset 1.  
+![Success_Run_Part1](./videos/EKF_Dataset_1.gif)  
+Success to plan path on dataset 2.  
+![Success_Run_Part1](./videos/EKF_Dataset_2.gif)  
